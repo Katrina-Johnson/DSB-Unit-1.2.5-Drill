@@ -1,0 +1,10 @@
+SELECT
+	name,
+	dockcount
+FROM
+	stations
+GROUP BY 1,2
+ORDER BY dockcount DESC
+Limit 1;
+
+--Which station is full most often?

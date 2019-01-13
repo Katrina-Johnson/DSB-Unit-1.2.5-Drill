@@ -1,0 +1,15 @@
+SELECT
+    stations.name,
+    COUNT(stations.dockcount = status.docks_available) as stateful
+FROM
+    stations
+JOIN
+    status
+ON
+    stations.station_id = status.station_id
+WHERE
+    stations.dockcount = status.docks_available
+GROUP BY stations.name
+ORDER BY stateful DESC
+Limit 1;
+--Which station is full most often?
